@@ -1,0 +1,6 @@
+# true: replace the vanilla infection chance (Easy 0%, Normal 50%, Hard 100%) with override-percentage
+# on every difficulty. false: plugin does nothing, vanilla behaviour applies.
+override-default: true
+
+# Chance (0.0 - 1.0) that a villager killed by a zombie turns into a zombie villager.
+override-percentage: 1.0
