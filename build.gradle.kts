@@ -17,6 +17,7 @@ repositories {
 
 dependencies {
     compileOnly("io.papermc.paper:paper-api:$minecraftVersion.build.$paperBuild-stable")
+    compileOnly(files("../mx-guide/build/libs/MXGuide-26.3-dev.jar"))
     implementation(kotlin("stdlib"))
 }
 

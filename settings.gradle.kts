@@ -1,1 +1,1 @@
-rootProject.name = "AlwaysInfect"
+rootProject.name = "MXAlwaysInfect"

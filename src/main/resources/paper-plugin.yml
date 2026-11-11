@@ -1,5 +1,11 @@
-name: AlwaysInfect
+name: MXAlwaysInfect
 version: '${version}'
 main: de.mermack.alwaysinfect.AlwaysInfectPlugin
 api-version: '${minecraftVersion}'
 description: Zombies always convert villagers into zombie villagers, regardless of difficulty.
+dependencies:
+  server:
+    MXGuide:
+      load: BEFORE
+      required: false
+      join-classpath: true
