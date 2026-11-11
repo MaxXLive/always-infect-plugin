@@ -1,0 +1,10 @@
+mxguide:
+  enabled: true
+  id: alwaysinfect
+  name: AlwaysInfect
+  description: Dörfler werden bei Zombiebissen immer infiziert
+  priority: 50
+  silent: false
+  message:
+    - "Zombies infizieren Dörfler immer, egal welcher Schwierigkeitsgrad."
+    - "Kein Setup nötig — funktioniert automatisch im Hintergrund."

@@ -24,6 +24,7 @@ class AlwaysInfectPlugin : JavaPlugin(), Listener {
         val overrideDefault = config.getBoolean("override-default", true)
         infectionChance = config.getDouble("override-percentage", 1.0).coerceIn(0.0, 1.0)
         saveResource("mx-guide.yml", false)
+        saveResource("mx-guide_de_DE.yml", false)
         if (!overrideDefault) {
             logger.info("override-default is false, using vanilla infection chance")
             return
