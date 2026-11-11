@@ -23,35 +23,13 @@ class AlwaysInfectPlugin : JavaPlugin(), Listener {
         saveDefaultConfig()
         val overrideDefault = config.getBoolean("override-default", true)
         infectionChance = config.getDouble("override-percentage", 1.0).coerceIn(0.0, 1.0)
-        registerWithMxGuide()
+        saveResource("mx-guide.yml", false)
         if (!overrideDefault) {
             logger.info("override-default is false, using vanilla infection chance")
             return
         }
         logger.info("Infection chance: ${infectionChance * 100}%")
         server.pluginManager.registerEvents(this, this)
-    }
-
-    private fun registerWithMxGuide() {
-        if (!server.pluginManager.isPluginEnabled("MXGuide")) {
-            logger.info("MXGuide not found - /help integration inactive.")
-            return
-        }
-        val reg = server.servicesManager.getRegistration(de.ermackov.mxguide.api.MxGuideApi::class.java) ?: return
-        saveResource("mx-guide.yml", false)
-        val cfg = org.bukkit.configuration.file.YamlConfiguration.loadConfiguration(
-            dataFolder.resolve("mx-guide.yml"))
-        val sec = cfg.getConfigurationSection("mxguide") ?: return
-        if (!sec.getBoolean("enabled", true)) return
-        reg.provider.registerEntry(de.ermackov.mxguide.GuideEntry(
-            sec.getString("id") ?: name,
-            sec.getString("name") ?: name,
-            sec.getString("description"),
-            sec.getInt("priority", 50),
-            sec.getStringList("message"),
-            sec.getBoolean("silent", false)
-        ))
-        logger.info("Registered with MXGuide.")
     }
 
     /**
