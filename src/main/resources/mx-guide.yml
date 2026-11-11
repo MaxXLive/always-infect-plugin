@@ -2,7 +2,7 @@ mxguide:
   enabled: true
   id: alwaysinfect
   name: AlwaysInfect
-  description: Dörfler werden bei Zombiebissen immer infiziert
+  description: "Villagers always get infected when killed by zombies"
   priority: 50
   silent: false
   message:
