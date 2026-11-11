@@ -52,7 +52,7 @@ jobs:
 
       - uses: actions/upload-artifact@v7
         with:
-          name: AlwaysInfect
+          name: MXAlwaysInfect
           path: build/libs/*.jar
           if-no-files-found: error
 
@@ -64,7 +64,7 @@ jobs:
           VERSION: ${{ steps.info.outputs.version }}
         run: |
           cat "$RUNNER_TEMP/CHANGELOG.md"
-          gh release create "$TAG" build/libs/AlwaysInfect-"$VERSION".jar \
+          gh release create "$TAG" build/libs/MXAlwaysInfect-"$VERSION".jar \
             --target "$GITHUB_SHA" \
-            --title "AlwaysInfect $VERSION" \
+            --title "MX AlwaysInfect $VERSION" \
             --notes-file "$RUNNER_TEMP/CHANGELOG.md"
