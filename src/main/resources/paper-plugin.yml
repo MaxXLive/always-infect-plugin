@@ -1,4 +1,4 @@
-name: MXAlwaysInfect
+name: AlwaysInfect
 version: '${version}'
 main: de.mermack.alwaysinfect.AlwaysInfectPlugin
 api-version: '${minecraftVersion}'
